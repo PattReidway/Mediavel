@@ -1,3 +1,5 @@
+// Mobile menu 
+
 const mobileButton = document.getElementById("mobile-button");
 const mainNav = document.getElementById("main-nav");
 const mobileIcon = document.getElementById("mobile-icon");
@@ -31,4 +33,16 @@ mainNav.addEventListener("click", function(event) {
 
 window.addEventListener("resize", function(event) {
     if (window.innerWidth >= 768) resetNav();
+})
+
+// Modal services
+
+const cardsList = document.querySelectorAll("#cards-list a.card");
+// console.log(cardsList);
+cardsList.forEach(function(card) {
+    // console.log(card);
+    card.addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log(this);
+    })
 })
