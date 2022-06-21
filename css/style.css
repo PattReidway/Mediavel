@@ -671,3 +671,36 @@ body.template-dark {
         background-color: var(--instagram-color);
     }
 }
+
+/* Modal */
+
+.section-card {
+    position: relative;
+}
+
+.modal {
+    position: absolute;
+    z-index: 90;
+    width: 100%;
+    height: 100%;
+    /* border: 5px solid yellow; */
+    padding: 3.5rem;
+}
+
+.modal-content {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.modal-close {
+
+}
+
+.modal-ttl {
+
+}
+
+.modal-txt {}
+
+.modal-icon {}

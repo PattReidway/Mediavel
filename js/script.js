@@ -38,11 +38,13 @@ window.addEventListener("resize", function(event) {
 // Modal services
 
 const cardsList = document.querySelectorAll("#cards-list a.card");
-// console.log(cardsList);
 cardsList.forEach(function(card) {
-    // console.log(card);
     card.addEventListener("click", function(event) {
         event.preventDefault();
         console.log(this);
     })
 })
+
+function createModal(){
+    
+}
