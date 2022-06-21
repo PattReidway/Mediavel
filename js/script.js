@@ -46,12 +46,12 @@ cardsList.forEach(function(card) {
             P: "modal-txt",
             IMG: "modal-icon"
         };
-        modal.firstElementChild.innerHTML = '<i class="fa fa-times modal-close" aria-hidden="true"></i>'
+        modal.firstElementChild.innerHTML = '<i class="fa fa-times modal-close" aria-hidden="true"></i>';
         Object.values(this.children).forEach(function(element) {
             const newElement = element.cloneNode(true);
             newElement.className = classList[element.tagName];
             modal.firstElementChild.appendChild(newElement);
-        })
+        });
     })
 })
 
@@ -64,5 +64,8 @@ function createModal() {
     modal.appendChild(modalContent);
     
     document.getElementById("services").insertBefore(modal, document.getElementById("cards-list"));
+    modal.addEventListener("click", function() {
+        this.remove();
+    })
     return modal;
 }
