@@ -359,7 +359,8 @@ body.template-dark {
     color: #fff;
 }
 
-.card-ttl {
+.card-ttl,
+.modal-ttl {
     font-weight: 900;
     font-size: 2rem;
     line-height: 1.2;
@@ -683,24 +684,57 @@ body.template-dark {
     z-index: 90;
     width: 100%;
     height: 100%;
-    /* border: 5px solid yellow; */
     padding: 3.5rem;
 }
 
 .modal-content {
+    position: relative;
     width: 100%;
     height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     background-color: #000;
 }
 
 .modal-close {
-
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #fff;
 }
 
 .modal-ttl {
-
+    /* height: 50%; */
+    font-size: 2.5rem;
+    color: var(--secondary-color);
 }
 
-.modal-txt {}
+.modal-txt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 2rem;
+}
 
-.modal-icon {}
+.modal-icon {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    opacity: .2;
+}
+
+@media screen and (max-width: 767px) {
+    .modal-icon {
+        width: calc(100% - 4rem);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-icon {
+        height: calc(100% - 4rem);
+    }
+}
