@@ -359,8 +359,7 @@ body.template-dark {
     color: #fff;
 }
 
-.card-ttl,
-.modal-ttl {
+.card-ttl {
     font-weight: 900;
     font-size: 2rem;
     line-height: 1.2;
@@ -707,8 +706,8 @@ body.template-dark {
 }
 
 .modal-ttl {
-    /* height: 50%; */
     font-size: 2.5rem;
+    font-weight: 900;
     color: var(--secondary-color);
 }
 
