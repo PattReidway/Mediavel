@@ -42,9 +42,21 @@ cardsList.forEach(function(card) {
     card.addEventListener("click", function(event) {
         event.preventDefault();
         console.log(this);
+
+        createModal();
     })
 })
 
 function createModal(){
+    const modal = document.createElement("div");
+    modal.className = "modal";
+    modal.id = "modal";
+    const modalContent = document.createElement("div");
+    modalContent.className = "modal-content";
+    modal.appendChild(modalContent);
+
+    modalContent.innerText = "This is a modal";
     
+
+    document.getElementById("services").insertBefore(modal, document.getElementById("cards-list"));
 }
