@@ -36,27 +36,33 @@ window.addEventListener("resize", function(event) {
 })
 
 // Modal services
-
 const cardsList = document.querySelectorAll("#cards-list a.card");
 cardsList.forEach(function(card) {
     card.addEventListener("click", function(event) {
         event.preventDefault();
-        console.log(this);
-
-        createModal();
+        const modal = createModal();
+        const classList = {
+            H3: "modal-ttl",
+            P: "modal-txt",
+            IMG: "modal-icon"
+        };
+        modal.firstElementChild.innerHTML = '<i class="fa fa-times modal-close" aria-hidden="true"></i>'
+        Object.values(this.children).forEach(function(element) {
+            const newElement = element.cloneNode(true);
+            newElement.className = classList[element.tagName];
+            modal.firstElementChild.appendChild(newElement);
+        })
     })
 })
 
-function createModal(){
+function createModal() {
     const modal = document.createElement("div");
     modal.className = "modal";
     modal.id = "modal";
     const modalContent = document.createElement("div");
     modalContent.className = "modal-content";
     modal.appendChild(modalContent);
-
-    modalContent.innerText = "This is a modal";
     
-
     document.getElementById("services").insertBefore(modal, document.getElementById("cards-list"));
+    return modal;
 }
